@@ -523,7 +523,8 @@ Trending Data Example:
       "url": "http:\/\/www.target.com\/p\/disney-frozen-game-bundle\/-\/A-15395545"
     }
   ]
-}```
+}
+```
 
 ### Part 2: Search Results Page
 
@@ -1437,7 +1438,8 @@ Total Data Available in Search API
       "placement": 9
     }
   ]
-}```
+}
+```
 
 ### Part 3: Product Page
 
@@ -1490,7 +1492,8 @@ Total Product Data:
   "weibo_shares": 1,
   "mpn": "H2G2-42",
   "container": "amazon-offers"
-}```
+}
+```
 
 Total Historical Product Data for Graphs and other components:
 
@@ -1697,4 +1700,5 @@ Total Historical Product Data for Graphs and other components:
     "2015-09-20": "Only 1 left in stock.",
     "2015-09-25": "In Stock."
   }
-}```
+}
+```
