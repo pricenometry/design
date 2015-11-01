@@ -56,7 +56,8 @@ Combining the Home Page and the Trending Page allows us to reduce the amount of 
 
 Trending Data Example:
 
-```{
+```json
+{
   "response": {
     "status": 200
   },
@@ -530,7 +531,8 @@ Continuing the search is the prime motivators for folks to continue using the si
 
 Total Data Available in Search API
 
-```{
+```json
+{
   "response": {
     "status": 200
   },
@@ -1443,7 +1445,8 @@ If the search page is the prime motivator, the product page is the final catalys
 
 Total Product Data:
 
-```{
+```json
+{
   "response": {
     "status": 200
   },
