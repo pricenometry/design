@@ -41,7 +41,7 @@
         <link rel="alternate stylesheet" href="http://demo.deviserweb.com/cv/assets/css/colors/purple.css" title="purple">
         <link rel="alternate stylesheet" href="http://demo.deviserweb.com/cv/assets/css/colors/orange.css" title="orange">
         <link rel="alternate stylesheet" href="http://demo.deviserweb.com/cv/assets/css/colors/green.css" title="green">
-        <link rel="stylesheet" href="assets/css/colors/red.css" title="red">
+        <link rel="stylesheet" href="assets/css/colors/lime.css" title="lime">
 
         <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif] -->
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -90,7 +90,7 @@
                             <!-- ========================================
                                        NAME AND TAGLINE
                             ==========================================-->
-                            <div class="title col s12 m12 center wow fadeIn white-bg" data-wow-delay="0.1s">
+                            <div class="title col s12 m12 center wow fadeIn white-bg" data-wow-delay="0.2s">
                                 <button class="btn btn-sucess"><i class="fa fa-bookmark"></i> Follow </button>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                                 <div class="col m12 s12 l3 icon">
                                    <i class="fa fa-tag"></i>
                                 </div>
-                                <div class="col m12 s12 l9 info wow fadeIn a1" data-wow-delay="0.2s" >
+                                <div class="col m12 s12 l9 info wow fadeIn a1" data-wow-delay="0.4s" >
                                     <div class="section-item-details">
                                         <h3>Google Chromecast HDMI Streaming Media Player</h3>
                                         <strike>$35.00</strike>
@@ -118,7 +118,7 @@
                                 <div class="col m12 s12 l3 icon"> <!-- icon -->
                                    <i class="fa fa-info"></i>
                                 </div>
-                                <div class="col m12 s12 l9 info wow fadeIn a1" data-wow-delay="0.3s" > <!-- text -->
+                                <div class="col m12 s12 l9 info wow fadeIn a1" data-wow-delay="0.6s" > <!-- text -->
                                     <div class="section-item-details">
                                         <p>Amazon.com: Google Chromecast HDMI Streaming Media Player: Electronics</p>
                                     </div>
@@ -135,16 +135,7 @@
                 <section class="col s12 m12 l8 section">
                     <div class="row">
                         <div class="section-wrapper z-depth-1">
-                            <div class="section-icon col s12 m12 l2">
-                                <i class="fa fa-line-chart"></i>
-                            </div>
-                            <div class="custom-content col s12 m12 l10 wow fadeIn a1" data-wow-delay="0.1s">
-                                <h2>Trends</h2>
-
-                                <div class="custom-content-wrapper wow fadeIn a2" data-wow-delay="0.2s">
-                                    <div id="trend-chart" style="height: 400px; min-width: 310px"></div>
-                                </div>
-                            </div>
+                            <div id="trend-chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
                         </div>
                     </div><!-- end row -->
                 </section><!-- end section -->
@@ -178,64 +169,59 @@
         $(function () {
             $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?', function (data) {
 
-                // Create the chart
-                $('#trend-chart').highcharts('StockChart', {
-
-
-                    rangeSelector : {
-                        selected : 0
+                $('#trend-chart').highcharts({
+                    chart: {
+                        zoomType: 'x'
                     },
-
-                    tooltip: {
-                        style: {
-                            width: '200px'
-                        },
-                        valueDecimals: 4,
-                        shared : true
+                    title: {
+                        text: 'Google Chromecast HDMI Streaming Media Player Historical Prices'
                     },
-
-                    yAxis : {
-                        title : {
-                            text : 'Exchange rate'
+                    subtitle: {
+                        text: document.ontouchstart === undefined ?
+                                'Click and drag in the plot area to zoom in - Source: Pricels.com' : 'Pinch the chart to zoom in - Source: Pricels.com'
+                    },
+                    xAxis: {
+                        type: 'datetime'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Prices'
+                        }
+                    },
+                    legend: {
+                        enabled: true
+                    },
+                    plotOptions: {
+                        area: {
+                            fillColor: {
+                                linearGradient: {
+                                    x1: 0,
+                                    y1: 0,
+                                    x2: 0,
+                                    y2: 1
+                                },
+                                stops: [
+                                    [0, Highcharts.getOptions().colors[0]],
+                                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                                ]
+                            },
+                            marker: {
+                                radius: 2
+                            },
+                            lineWidth: 1,
+                            states: {
+                                hover: {
+                                    lineWidth: 2
+                                }
+                            },
+                            threshold: null
                         }
                     },
 
-                    series : [{
-                        name : 'USD to EUR',
-                        data : data,
-                        id : 'dataseries'
-
-                    // the event marker flags
-                    }, {
-                        type : 'flags',
-                        data : [{
-                            x : Date.UTC(2015, 5, 8),
-                            title : 'C',
-                            text : 'Stocks fall on Greece, rate concerns; US dollar dips'
-                        }, {
-                            x : Date.UTC(2015, 5, 12),
-                            title : 'D',
-                            text : 'Zimbabwe ditches \'worthless\' currency for the US dollar '
-                        }, {
-                            x : Date.UTC(2015, 5, 19),
-                            title : 'E',
-                            text : 'US Dollar Declines Over the Week on Rate Timeline'
-                        }, {
-                            x : Date.UTC(2015, 5, 26),
-                            title : 'F',
-                            text : 'Greek Negotiations Take Sharp Turn for Worse, US Dollar set to Rally '
-                        }, {
-                            x : Date.UTC(2015, 5, 29),
-                            title : 'G',
-                            text : 'Euro records stunning reversal against dollar'
-                        }, {
-                            x : Date.UTC(2015, 5, 30),
-                            title : 'H',
-                            text : 'Surging US dollar curbs global IT spend'
-                        }],
-                        onSeries : 'dataseries',
-                        shape : 'circlepin',
-                        width : 16
+                    series: [{
+                        type: 'area',
+                        name: 'Price',
+                        data: data
                     }]
                 });
             });
