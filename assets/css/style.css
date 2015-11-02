@@ -167,6 +167,9 @@ body .container {
 .sidebar .sidebar-item:first-child {
   margin-top: 30px;
 }
+.sidebar .white-bg {
+  color: #e74c3c;
+}
 .sidebar .section-item-details {
   padding-right: 26px;
   margin-bottom: 30px;
@@ -405,8 +408,8 @@ body .container {
 }
 /* style for
     **************
-   * Cover latter * 
- 
+   * Cover latter *
+
 */
 .cover-latter {
   padding: 30px;
