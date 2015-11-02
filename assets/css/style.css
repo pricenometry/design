@@ -169,6 +169,7 @@ body .container {
 }
 .sidebar .white-bg {
   color: #e74c3c;
+  /*text-shadow: 2px 2px 2px #fff;*/
 }
 .sidebar .section-item-details {
   padding-right: 26px;
