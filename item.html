@@ -90,7 +90,7 @@
                                        NAME AND TAGLINE
                             ==========================================-->
                             <div class="title col s12 m12 center wow fadeIn white-bg" data-wow-delay="0.2s">
-                                <a  href="http://www.bestbuy.com/site/google-refurbished-chromecast-black/4395700.p?id=1219750723812&skuId=4395700" target="_blank"><button class="btn btn-sucess"><i class="fa fa-shopping-cart"></i> Buy Now </button></a>
+                                <button class="btn btn-sucess"><i class="fa fa-bookmark"></i> Follow </button>
                             </div>
                         </div>
 
@@ -105,7 +105,7 @@
                                         <h3>Google - Refurbished Chromecast - Black</h3>
                                         <strike>$35.00</strike>
                                         <h2>$25.00</h2>
-                                        <button class="btn btn-sucess"><i class="fa fa-bookmark"></i> Follow </button>
+                                        <a  href="http://www.bestbuy.com/site/google-refurbished-chromecast-black/4395700.p?id=1219750723812&skuId=4395700" target="_blank"><button class="btn btn-sucess"><i class="fa fa-shopping-cart"></i> Buy Now </button></a>
                                     </div>
                                 </div>
                             </div>
@@ -170,18 +170,6 @@
                     <div class="row">
                         <div class="section-wrapper z-depth-1">
                             <div class="section-icon col s12 m12 l2">
-                                <i class="fa fa-pie-chart"></i>
-                            </div>
-                            <div class="custom-content col s12 m12 l10 wow fadeIn a1" data-wow-delay="0.1s">
-                                <h2>Social Shares</h2>
-
-                                <div id="social" class="custom-content-wrapper wow fadeIn a2" data-wow-delay="0.2s">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="section-wrapper z-depth-1">
-                            <div class="section-icon col s12 m12 l2">
                                 <i class="fa fa-line-chart"></i>
                             </div>
                             <div class="custom-content col s12 m12 l10 wow fadeIn a1" data-wow-delay="0.1s">
@@ -194,12 +182,19 @@
 
                         <div class="section-wrapper z-depth-1">
                             <div class="section-icon col s12 m12 l2">
-                                <i class="fa fa-area-chart"></i>
+                                <i class="fa fa-pie-chart"></i>
                             </div>
                             <div class="custom-content col s12 m12 l10 wow fadeIn a1" data-wow-delay="0.1s">
-                                <h2>Social History</h2>
+                                <h2>Social</h2>
 
-                                <div id="facebook" class="custom-content-wrapper wow fadeIn a2" data-wow-delay="0.2s">
+                                <h3>Shares</h3>
+
+                                <div id="social_shares" class="wow fadeIn a2" data-wow-delay="0.2s">
+                                </div>
+
+                                <h3>History</h3>
+
+                                <div id="social_history" class="wow fadeIn a2" data-wow-delay="0.2s">
                                 </div>
                             </div>
                         </div>
@@ -235,7 +230,7 @@
         <script src="assets/js/chartkick.js"></script>
 
         <script>
-          new Chartkick.PieChart("social", [
+          new Chartkick.PieChart("social_shares", [
             ['Facebook', 42],
             ['Google+', 13],
             ['Pinterest', 1],
@@ -267,7 +262,7 @@
         </script>
 
         <script>
-          new Chartkick.AreaChart("facebook", [
+          new Chartkick.AreaChart("social_history", [
             {"name":"Twitter",
              "data":{
                 "2015-11-08": 1,
